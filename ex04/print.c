@@ -27,7 +27,7 @@ void print_reverse(const char *str)
     }
     for (size_t i = 0; i < len; i++)
         tmp[i] = str[len - i - 1];
-    tmp[len - 1] = '\0';
+    tmp[len] = '\0';
     print_normal(tmp);
 }
 
@@ -42,7 +42,7 @@ void print_upper(const char *str)
     }
     for (size_t i = 0; i < len; i++)
         tmp[i] = (char)toupper(str[i]);
-    tmp[len - 1] = '\0';
+    tmp[len] = '\0';
     print_normal(tmp);
 }
 
