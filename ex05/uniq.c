@@ -38,14 +38,16 @@ size_t uniq_array(
     uint8_t *dup = malloc(size * nmemb);
     size_t i = 0;
 
+    if (dup == NULL)
+        return 0;
     memcpy(dup, array, size * nmemb);
     for (size_t j = 0; j < nmemb; j++) {
         if (is_in_arr(dup, j, size, compar))
             continue;
-        for (size_t x = 0; x < size; x++)
-            ptr[i * size + x] = ptr[j * size + x];
+        memcpy(ptr + i * size, ptr + j * size, size);
         i += 1;
     }
+    free(dup);
     return i;
 }
 
