@@ -14,8 +14,8 @@ void array_1d_to_2d(const int *array, size_t height, size_t width, int ***res)
         return;
     *res = malloc(sizeof(int *) * height);
     for (size_t i = 0; i < height; i++) {
-        *res[i] = malloc(sizeof(int) * width);
-        memcpy(*res[i], array + (i * width), width * sizeof(int));
+        (*res)[i] = malloc(sizeof(int) * width);
+        memcpy((*res)[i], array + (i * width), width * sizeof(int));
     }
 }
 
