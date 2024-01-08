@@ -17,11 +17,7 @@ void mul_div_long(int a, int b, int *mul, int *div)
 
 void mul_div_short(int *a, int *b)
 {
-    int res;
-
     if (a == NULL || b == NULL)
         return;
-    res = (*b) ? *a / *b : 42;
-    *a = res;
-    *b = res;
+    mul_div_long(*a, *b, a, b);
 }
